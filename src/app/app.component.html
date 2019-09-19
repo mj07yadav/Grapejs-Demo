@@ -1,21 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- <div style="text-align:center"><h3>Mritunjay Text Editor</h3></div> -->
+<div class="container-fluid" style="overflow-x:hidden">
+
+  <!-- Navbar -->
+  <div class="row" >
+    <div class="col navbar">
+      Admin Name
+    </div>
+  </div>
+
+  <!-- titlebar -->
+  <div class="row">
+    <div class="col" style="padding: 0px;">
+        <div class="col" style="background-color:#008e52;width:100vw;">
+            <p style="text-align: center;
+            font-size: xx-large;
+            font-weight: 300;
+            padding: 0px;
+            color:white;
+            margin-top:11vh;
+            margin-bottom:0px;
+            ">Template Editor</p>
+          </div>
+    </div>
+  </div>
+
+  <!-- editor and question -->
+  <div class="row" style="background-color: #008e52;">
+    <div class="col-3" style="background-color: white;height: 94vh;overflow-y: auto;    overflow-x: hidden;">
+      <div class="row">
+        <ol>
+          <div *ngFor="let question of questions ; let i=index">
+            <li>
+              <p class="fontcheck" (click)="questionCollapse(i)"> question {{i+1}}? </p>
+              <div id="demo{{i}}" class="collapse">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Group Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lender Group //Typeahead">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Input Type</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eg DateField">
+
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Input Options</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eg Person or Componay">
+
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Attribute attached</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eg <#lender_type#>">
+
+                  </div>
+                </form>
+              </div>
+            </li>
+
+          </div>
+        </ol>
+        <div style="position: fixed;top: 95vh;left: 9vw;">
+          <button class="btn btn-primary" (click)="addQuestion()">Add Question</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <!-- <div class="panel__top">
+        <div class="panel__basic-actions"></div>
+      </div> -->
+      <div id="gjs"></div>
+    </div>
+  </div>
+
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <div id="blocks"></div> -->
+
 
 <router-outlet></router-outlet>
