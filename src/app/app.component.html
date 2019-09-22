@@ -31,8 +31,8 @@
         <ol>
           <div *ngFor="let question of questions ; let i=index">
             <li>
-              <p class="fontcheck" (click)="questionCollapse(i)"> question {{i+1}}? </p>
-              <div id="demo{{i}}" class="collapse">
+              <p class="fontcheck" (click)="questionCollapse(i)" draggable="true" (dragstart)="onQuestionDragEvent($event)" id="question{{i+1}}"> question {{i+1}}? </p>
+              <div id="demo{{i+1}}" class="collapse">
                 <form>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Group Name</label>
